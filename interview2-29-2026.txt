@@ -43,3 +43,96 @@ address: match.address
 console.log(result)
 
 
+================
+
+1. Angular to React Migration
+
+Q: How did you migrate Angular to React?
+
+A:
+"We migrated in phases by converting Angular components into React functional components. We moved services to API layers, used hooks for state management, implemented route protection, optimized performance, and tested each migrated module before deployment."
+
+2. Role-Based Access (5 Tabs, User Has Access to 2)
+
+Q: How do you handle users having access to only 2 of 5 tabs?
+
+A:
+"After login, we get user roles/permissions from the backend and render only authorized tabs. We also protect routes so users cannot access restricted tabs by modifying the URL."
+
+3. Password Visible in Inspect Element / Network Tab
+
+Q: How do you secure login payloads?
+
+A:
+"We use HTTPS so data is encrypted in transit. Passwords are never stored in localStorage, sessionStorage, or logs. Backend validates credentials and returns a secure token."
+
+4. Password Masking in UI
+
+Q: How do you mask passwords on the UI?
+
+A:
+"Use an input field with type='password'. This hides the characters from the user while typing."
+
+<input type="password" />
+5. Parallel API Calls
+
+Q: What if multiple APIs are called in parallel and one fails?
+
+A:
+"I use Promise.allSettled() so successful APIs still return data while failed APIs are handled separately."
+
+6. Promise vs Observable
+
+Q: Difference between Promise and Observable?
+
+A:
+
+Promise	Observable
+Single value	Multiple values
+Cannot cancel	Can unsubscribe
+Uses then/catch	Uses subscribe
+Executes immediately	Executes on subscribe
+
+One-liner:
+"Promise handles one async result; Observable handles a stream of results."
+
+7. Observable
+
+Q: What is Observable?
+
+A:
+"Observable is an RxJS stream that can emit multiple values over time. It supports cancellation, operators, and is commonly used in Angular HTTP calls and real-time data streams."
+
+8. Dynamic Data Between Tabs
+
+Q: User enters Name, ID, Address in Tab 1. Tab 2 needs it dynamically. How do you handle it?
+
+A:
+"I keep the data in a parent component or Redux/Context store. When Tab 1 updates the data, Tab 2 automatically receives the latest values."
+
+9. Unsaved Changes While Switching Tabs
+
+Q: User modifies data and moves to another tab without saving. What do you do?
+
+A:
+"I track dirty form state and show a confirmation popup: 'You have unsaved changes. Do you want to save or discard them?'"
+
+10. React vs Angular
+
+Q: Why React over Angular?
+
+A:
+"React is lightweight, flexible, has a virtual DOM, and is easier to adopt incrementally."
+
+Q: Why Angular over React?
+
+A:
+"Angular provides a complete framework with built-in routing, dependency injection, forms, and RxJS support, making it suitable for large enterprise applications."
+
+11. Security in React vs Angular
+
+Q: Security differences?
+
+A:
+"Both are secure when implemented correctly. Angular has more built-in protections such as sanitization. React requires developers to be more careful with XSS prevention and secure coding practices."
+
