@@ -14,8 +14,32 @@ Previously worked with Accelerator team for Visa Inc. remediation of MBDA module
 
 Capital Group worked on DAVIS Project. Davis stands for Data visualization where we build different highcharts using react and integrate into the AEM., the backend is Java. Previously I worked on Creative Workbench, a writing tool where articles are published on capital group websites.
 
-At Cerner Corporation worked on the medical examination forms.
+==============================================================
+arr = [{name=abc, id=1, number=1234}, {name=abc, id=2, number=1234}, {name=abc, id=3, number=1234}, {name=abc, id=1, number=1234}];
+//code duplicate of the code - not for loop
 
-In Office Depot worked on black Friday reporting.
+const unique = arr.filter(item, index, self) =>
+index === self.findIndex(obj => obj.id  =item .id)
+);
+console.log(unique);
 
-Satinos Technologies created a tax portal and a schoomin website for the Vignan schools.
+
+
+
+arr = [{name=abc, id=1, number=1234}, {name=abc, id=2, number=1234}, {name=abc, id=3, number=1234}, {name=abc, id=1, number=1234}];
+arr2 = [{address=abc, id=1, number=1234}, {address=abc, id=2, number=1234}, {address=abc, id=3, number=1234}, {address=abc, id=1, number=1234}];
+//merge array w.r.t to it name, id, number, address.
+
+const result = arr1.map(item => {
+const match = arr2.find(obj => obj.id === item.id);
+
+return {
+name: item.name,
+id: item.id,
+number: item.number,
+address: match.address
+};
+});
+console.log(result)
+
+
